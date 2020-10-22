@@ -58,7 +58,7 @@ Main questions to answer:
    
    <img src="Figures/2nd_hand_cars_map_closeup.png" width="600"/> 
    
-   * Study what variables correlate best with the median price among spanish regions. The age of the car showed the strongest corr. R^2 = 0.6
+   * Study what variables correlate best with the median price among spanish regions. The age of the car showed the strongest corr. R<sup>2</sup>= 0.6
    
    <img src="Figures/car_years_vs_price.png" width="600"/> 
    
