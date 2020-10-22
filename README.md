@@ -1,6 +1,6 @@
 # Car Prices Estimator: An End-to-End Project
 
-[See full project here.](xxxxxxx)
+[See full project here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_project.ipynb)
 
 **Description**: An end-to-end project in which I scrape , prepare, analyse the data and find a model to predict second hard prices cars in Spain.
 
@@ -10,9 +10,9 @@
 
 2) **Cleaned** and **prepared the data**. 🔄
 
-2) **Analyzed the data** to answer questions such, in what cities can we find the best deals? or What models are most popular or reliable? 📈📊
+3) **Analyzed the data** to answer questions such, in what cities can we find the best deals? or What models are most popular or reliable? 📈📊
 
-3) Trained an algo to **predict the price** of second hand cars. 💲
+4) Trained an algo to **predict the price** of second hand cars. **Score = 0.93**. 💲
 
 # Code and Resources Used
 
@@ -98,11 +98,12 @@ was assessed using **cross-validation** with 10 splits, and **negative mean squa
    <img src="Figures/algo_comparisson_cars.png" width="400"/>
    
    # 6. Fine Tunning and Model Evaluation:
+   
    * The ETR model was fine tunned using GridSearchCV. The following hyperparameters were optimized to maximiza the model performance in both the train and test set while avoiding overfitting:
     * n_estimators
     * max_depth
     * min_samples_leaf
-    *min_samples_split
+    * min_samples_split
     
  * **Score**: The model ExtraTreesRegressor(n_estimators=100, max_depth=16, min_samples_leaf=4, min_samples_split=2) allowed to predict the **car price** 
  with a score of **0.93** on both the train and test set.
