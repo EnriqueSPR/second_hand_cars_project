@@ -1,6 +1,6 @@
 # Car Prices Estimator: An End-to-End Project
 
-[See full project here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_project.ipynb)
+[See full project code here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_project.ipynb)
 
 **Description**: An end-to-end project in which I scrape , prepare, analyse the data and find a model to predict second hard prices cars in Spain.
 
