@@ -6,11 +6,9 @@ import pickle
 import pandas as pd
 import numpy as np
 import sklearn
-from app import db
 
 
 app = Flask(__name__)
-db.create_all()
 X = pd.read_csv("X.csv")
 X = X.drop('Unnamed: 0', axis=1)
 model = pickle.load(open('price_car_predictor_brands.pickle', 'rb'))
