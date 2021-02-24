@@ -8,10 +8,10 @@ import numpy as np
 import sklearn
 
 app = Flask(__name__)
-X = pd.read_csv("Data/X.csv")
+X = pd.read_csv("X.csv")
 X = X.drop('Unnamed: 0', axis=1)
-model = pickle.load(open('Model/price_car_predictor_brands.pickle', 'rb'))
-scaler = pickle.load(open('Model/scaler_train.pickle', 'rb'))
+model = pickle.load(open('price_car_predictor_brands.pickle', 'rb'))
+scaler = pickle.load(open('scaler_train.pickle', 'rb'))
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('index.html')
