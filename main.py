@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 import jsonify
 import requests
@@ -6,26 +5,28 @@ import pickle
 import pandas as pd
 import numpy as np
 import sklearn
-from app import db
 
 app = Flask(__name__)
-db.create_all()
-X = pd.read_csv("X.csv")
-X = X.drop('Unnamed: 0', axis=1)
 model = pickle.load(open('price_car_predictor_brands.pickle', 'rb'))
-scaler = pickle.load(open('scaler_train.pickle', 'rb'))
-@app.route('/',methods=['GET'])
+
+
+@app.route('/', methods=['GET'])
 def Home():
     return render_template('index.html')
 
 
+standard_to = pickle.load(open('scaler_train.pickle', 'rb'))
+X = pd.read_csv("X.csv")
+X = X.drop('Unnamed: 0', axis=1)
+
+
 @app.route("/predict", methods=['POST'])
-def predict(years_old, km, doors=5, location="Madrid", brand="Audi", horse_power=125, gear=0, seller=0, fuel=1,
-                   description_len=548):
+def predict(years_old=4, km=20000, doors=5, location="Madrid", brand="Audi", horse_power=125, gear=0, seller=0, fuel=1,
+            description_len=548):
     if request.method == 'POST':
         years_old = int(request.form['Years_Old'])
         km = int(request.form['Kms_Driven'])
-        doors = int(request.form['Doors'])  #
+        doors = int(request.form['Doors'])
         horse_power = float(request.form['Horse_Power'])
         description_len = int(request.form['Length_Add'])
 
@@ -66,7 +67,6 @@ def predict(years_old, km, doors=5, location="Madrid", brand="Audi", horse_power
 
         try:
             loc_index = np.where(X.columns == location)[0][0]
-            # we use np.where method to loc the index for the location
 
             if loc_index >= 0:
                 x[loc_index] = 1
@@ -76,7 +76,6 @@ def predict(years_old, km, doors=5, location="Madrid", brand="Audi", horse_power
 
         try:
             loc_index2 = np.where(X.columns == brand)[0][0]
-            # X is an np array so we use where method to locate the index
 
             if loc_index2 >= 0:
                 x[loc_index2] = 1
@@ -84,10 +83,8 @@ def predict(years_old, km, doors=5, location="Madrid", brand="Audi", horse_power
         except IndexError:
             pass
 
-        x1 = scaler.transform(x[:5].reshape(-1, 1).T)
-        # Rescaling non dummy variables
+        x1 = standard_to.transform(x[:5].reshape(-1, 1).T)
         x2 = x[5:].reshape(-1, 1).T
-        # Dummy variables not rescaled
         x = np.concatenate((x1, x2), axis=1)
 
         prediction = model.predict(x)[0]
@@ -97,8 +94,12 @@ def predict(years_old, km, doors=5, location="Madrid", brand="Audi", horse_power
         if output < 0:
             return render_template('index.html', prediction_texts="Sorry you cannot sell this car")
         else:
-            return render_template('index.html', prediction_text="You Can Sell The Car at {} euros".format(output))
+            return render_template('index.html',
+                                   prediction_text="The estimated value for this second hand car is {} euros".format(
+                                       output))
     else:
         return render_template('index.html')
 
+
 if __name__=="__main__":
+    app.run(debug=True)
