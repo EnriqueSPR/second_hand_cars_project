@@ -1,8 +1,8 @@
 # Car Prices Estimator: An End-to-End Project
 
-[See full project code here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_project.ipynb)
+[See full project code here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_price_project.ipynb)
 
-**Description**: An end-to-end project in which I scrape , prepare, analyse the data and find a model to predict second hard prices cars in Spain.
+**Description**: An end-to-end project in which I scrape , prepare, analyse the data, find a model and create a web app to predict second hard prices cars in Spain.
 
 **Summary of the project**:
 
@@ -118,5 +118,12 @@ was assessed using **cross-validation** with 10 splits, and **negative mean squa
  
  * The model was saved as a **pickle** file for its use.
  
+ # 8. Productionization
+
+In this step, I built a flask API endpoint that was hosted on a local webserver. The API endpoint takes in a request with the list of car related parameters and returns the estimated selling second hand price. A website that makes use of the model prediction was also created (See the app interface below).
+
+<img src="Figures/app_interface.png" width="600"/> 
+
+
    
    
