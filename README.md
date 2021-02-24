@@ -118,5 +118,11 @@ was assessed using **cross-validation** with 10 splits, and **negative mean squa
  
  * The model was saved as a **pickle** file for its use.
  
+ # 8. Productionization
+
+In this step, I built a flask API endpoint that was hosted on a local webserver. The API endpoint takes in a request with the list of car related parameters and returns the estimated selling second hand price. A website that makes use of the model prediction was also created.
+
+![](Images/Prediction_Tool_Screenshot.png)
+
    
    
