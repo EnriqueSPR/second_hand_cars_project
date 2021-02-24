@@ -2,7 +2,7 @@
 
 [See full project code here.](https://nbviewer.jupyter.org/github/EnriqueSPR/second_hand_cars_project/blob/main/car_price_project.ipynb)
 
-**Description**: An end-to-end project in which I scrape , prepare, analyse the data and find a model to predict second hard prices cars in Spain.
+**Description**: An end-to-end project in which I scrape , prepare, analyse the data and find and productionalize a model to predict second hard prices cars in Spain.
 
 **Summary of the project**:
 
