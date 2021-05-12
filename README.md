@@ -6,13 +6,13 @@
 
 **Summary of the project**:
 
-1) I **scraped 40000 second hand cars** from [Milanuncios](https://www.milanuncios.com/coches-de-segunda-mano/?fromSearch=1&orden=relevance&pagina=1). One of the most famous second-hand online pages in Spain. 🚗🚓🚕💨
+1) I **scraped 40000 second hand cars** from [Milanuncios](https://www.milanuncios.com/coches-de-segunda-mano/?fromSearch=1&orden=relevance&pagina=1). One of the most famous second-hand online pages in Spain 🚗🚓🚕💨.
 
-2) **Cleaned** and **prepared the data**. 🔄
+2) **Cleaned** and **prepared the data** 🔄.
 
 3) **Analyzed the data** to answer questions such, in what cities can we find the best deals? or What models are most popular or reliable? 📈📊
 
-4) Trained an algo to **predict the price** of second hand cars. **Score = 0.93**. 💲
+4) Trained an algo to **predict the price** of second hand cars. **Score = 0.93** 💲.
 
 # Code and Resources Used
 
